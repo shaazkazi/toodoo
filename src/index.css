@@ -1,39 +1,113 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Base Styles */
 @layer base {
   body {
-    @apply bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-gray-50;
+    background-color: #f9fafb; /* bg-gray-50 */
+    color: #111827; /* text-gray-900 */
+  }
+ 
+  .dark body {
+    background-color: #111827; /* bg-gray-900 */
+    color: #f9fafb; /* text-gray-50 */
   }
 }
 
 /* Button Styles */
-.btn {
-  @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none;
-}
+@layer components {
+  .btn {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    transition: all 200ms ease-in-out;
+    outline: none;
+  }
 
-.btn-primary {
-  @apply bg-primary-500 text-white hover:bg-primary-600 dark:bg-primary-600 dark:hover:bg-primary-700;
-}
+  .btn-primary {
+    background-color: #3B82F6; /* blue-500 */
+    color: white;
+  }
+ 
+  .btn-primary:hover {
+    background-color: #2563EB; /* blue-600 */
+  }
+ 
+  .dark .btn-primary {
+    background-color: #2563EB; /* blue-600 */
+  }
+ 
+  .dark .btn-primary:hover {
+    background-color: #1D4ED8; /* blue-700 */
+  }
 
-.btn-secondary {
-  @apply bg-secondary-500 text-white hover:bg-secondary-600 dark:bg-secondary-600 dark:hover:bg-secondary-700;
-}
+  .btn-secondary {
+    background-color: #6B7280; /* gray-500 */
+    color: white;
+  }
+ 
+  .btn-secondary:hover {
+    background-color: #4B5563; /* gray-600 */
+  }
+ 
+  .dark .btn-secondary {
+    background-color: #4B5563; /* gray-600 */
+  }
+ 
+  .dark .btn-secondary:hover {
+    background-color: #374151; /* gray-700 */
+  }
 
-.btn-danger {
-  @apply bg-red-500 text-white hover:bg-red-600 dark:bg-red-600 dark:hover:bg-red-700;
-}
+  .btn-danger {
+    background-color: #EF4444; /* red-500 */
+    color: white;
+  }
+ 
+  .btn-danger:hover {
+    background-color: #DC2626; /* red-600 */
+  }
+ 
+  .dark .btn-danger {
+    background-color: #DC2626; /* red-600 */
+  }
+ 
+  .dark .btn-danger:hover {
+    background-color: #B91C1C; /* red-700 */
+  }
 
-/* Input Styles */
-.input {
-  @apply w-full px-3 py-2 bg-white dark:bg-gray-800 border border-gray-300 dark:border-dark-border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:text-white;
-}
+  /* Input Styles */
+  .input {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    background-color: white;
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    outline: none;
+  }
+ 
+  .input:focus {
+    border-color: #3B82F6; /* blue-500 */
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+  }
+ 
+  .dark .input {
+    background-color: #1f2937; /* bg-gray-800 */
+    border-color: #374151; /* border-gray-700 */
+    color: white;
+  }
 
-/* Card Styles */
-.card {
-  @apply bg-white dark:bg-dark-card rounded-xl shadow-md p-6 transition-all duration-300;
+  /* Card Styles */
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: all 300ms;
+  }
+ 
+  .dark .card {
+    background-color: #1f2937; /* bg-gray-800 */
+  }
 }
 
 /* Animations */
